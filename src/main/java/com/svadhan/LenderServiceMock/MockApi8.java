@@ -1,6 +1,12 @@
 package com.svadhan.LenderServiceMock;
 
 import org.springframework.http.MediaType;
+import org.mockserver.client.MockServerClient;
+import org.mockserver.model.HttpRequest;
+import org.mockserver.model.HttpResponse;
+import org.mockserver.model.JsonBody;
+import org.springframework.http.MediaType;
+
 
 public class MockApi8 {
     public void mockApi8Response() {
