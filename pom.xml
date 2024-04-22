@@ -41,12 +41,30 @@
 
 
 		<!-- https://mvnrepository.com/artifact/org.mock-server/mockserver-netty -->
-		<!-- https://mvnrepository.com/artifact/org.mock-server/mockserver-netty -->
 		<dependency>
 			<groupId>org.mock-server</groupId>
 			<artifactId>mockserver-netty</artifactId>
-			<version>5.11.2</version>
+			<version>5.14.0</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mock-server/mockserver-client-java -->
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-client-java</artifactId>
+			<version>5.15.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-model -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model</artifactId>
+			<version>3.9.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-plugin-api -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>3.9.6</version>
 		</dependency>
 
 
@@ -55,16 +73,48 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- Add the mockserver-maven-plugin -->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-maven-plugin</artifactId>
+				<version>5.14.0</version>
+				<executions>
+					<execution>
+						<id>start</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+						<configuration>
+							<port>8080</port>
+							<!-- Other configurations if needed -->
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
+
+
+			<!-- Other plugins -->
 		</plugins>
 	</build>
+
 	<repositories>
 		<repository>
 			<id>central</id>

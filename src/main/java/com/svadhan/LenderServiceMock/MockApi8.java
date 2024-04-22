@@ -1,12 +1,9 @@
 package com.svadhan.LenderServiceMock;
 
-import org.springframework.http.MediaType;
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.HttpRequest;
 import org.mockserver.model.HttpResponse;
 import org.mockserver.model.JsonBody;
-import org.springframework.http.MediaType;
-
 
 public class MockApi8 {
     public void mockApi8Response() {
@@ -32,8 +29,7 @@ public class MockApi8 {
                                         "        \"message\": \"Repayment Updated.\"\n" +
                                         "    }\n" +
                                         "}"))
-                                .withContentType(MediaType.APPLICATION_JSON)
+                                .withContentType(org.mockserver.model.MediaType.APPLICATION_JSON)
                 );
     }
 }
-
