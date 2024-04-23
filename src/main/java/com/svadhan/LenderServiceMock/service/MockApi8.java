@@ -1,4 +1,4 @@
-package com.svadhan.LenderServiceMock;
+package com.svadhan.LenderServiceMock.service;
 
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.HttpRequest;

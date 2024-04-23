@@ -1,4 +1,4 @@
-package com.svadhan.LenderServiceMock;
+package com.svadhan.LenderServiceMock.model;
 
 import lombok.Data;
 

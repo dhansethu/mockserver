@@ -1,5 +1,7 @@
-package com.svadhan.LenderServiceMock;
+package com.svadhan.LenderServiceMock.route;
 
+import com.svadhan.LenderServiceMock.model.Api8Request;
+import com.svadhan.LenderServiceMock.model.Api8Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
